@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>   
+<databaseChangeLog  
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"  
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">  
+  
+  <changeSet id='001' author='ivo'>
+	  <sql>
+CREATE TABLE public.car
+(
+    reg_num character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    accel integer NOT NULL,
+    cylinders integer NOT NULL,
+    horsepower integer NOT NULL,
+    mark bytea,
+    model bytea,
+    mpg integer NOT NULL,
+    sale_date date,
+    weight integer NOT NULL,
+    owner_egn character varying(255) COLLATE pg_catalog."default",
+    CONSTRAINT car_pkey PRIMARY KEY (reg_num),
+    CONSTRAINT fkh4g8dqshtcluagp19md32k2ah FOREIGN KEY (owner_egn)
+        REFERENCES public.owner_of_car (egn) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public.car
+    OWNER to postgres;
+	  </sql>
+  </changeSet>
+  
+</databaseChangeLog>

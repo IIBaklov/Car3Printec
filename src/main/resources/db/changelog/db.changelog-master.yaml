@@ -1,0 +1,17 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/changelog-Initial-Marks-v1.0.xml
+  - include:
+      file: db/changelog/changelog-Marks-v1.0.xml
+  - include:
+      file: db/changelog/changelog-Initial-Models-v1.0.xml
+  - include:
+      file: db/changelog/changelog-Models-v1.0.xml
+  - include:
+      file: db/changelog/changelog-Initial-Owners-v1.0.xml
+  - include:
+      file: db/changelog/changelog-Owners-v1.0.xml
+  - include:
+      file: db/changelog/changelog-Initial-Cars-v1.0.xml
+  - include:
+      file: db/changelog/changelog-Cars-v1.0.xml

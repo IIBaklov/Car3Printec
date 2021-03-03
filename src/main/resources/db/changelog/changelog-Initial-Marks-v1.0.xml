@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>   
+<databaseChangeLog  
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"  
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">  
+  
+  <changeSet id='001' author='ivo'>
+	  <sql>
+	   CREATE TABLE public.mark
+		(
+		    id integer NOT NULL,
+		    create_date date,
+		    mark_name character varying(255) COLLATE pg_catalog."default" NOT NULL,
+		    CONSTRAINT mark_pkey PRIMARY KEY (id)
+		)
+		
+		TABLESPACE pg_default;
+		
+		ALTER TABLE public.mark
+    OWNER to postgres;
+	  </sql>
+  </changeSet>
+  
+</databaseChangeLog>
